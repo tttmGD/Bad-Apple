@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react"
 
 const App = () => {
-	const [frame, setFrame] = useState(0)
+	const [frame, setFrame] = useState("")
+	const [data, setData] = useState("")
 	useEffect(() => {
+		fetch("https://cdn.emancial.me/badapple.json")
+			.then(res => res.json())
+			.then(data => setData(data))
+	}, [])
+	useEffect(() => {
+		let i = 0
 		const interval = setInterval(() => {
-			setFrame(frame + 1)
-		}, 1000 / 60)
+			setFrame(data[i])
+			i++
+		}, 20)
 		return () => clearInterval(interval)
-	}, [frame])
+	}, [data])
 	return (
-		<h1>{frame}</h1>
+		<>
+			<p>{frame}</p>
+		</>
 	)
 }
 

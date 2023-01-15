@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+	font-size: 0px;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	font-family: "Lucida Grande", monospace;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #333;
+	padding: 0;
+	margin: 0;
+	white-space: pre-wrap;
+}
