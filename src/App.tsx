@@ -6,7 +6,7 @@ const App = () => {
 	useEffect(() => {
 		fetch("https://cdn.emancial.me/badapple.json")
 			.then(res => res.json())
-			.then(data => setData(data))
+			.then(setData)
 	}, [])
 	useEffect(() => {
 		let i = 0
@@ -16,11 +16,7 @@ const App = () => {
 		}, 20)
 		return () => clearInterval(interval)
 	}, [data])
-	return (
-		<>
-			<p>{frame}</p>
-		</>
-	)
+	return <p>{frame}</p>
 }
 
 export default App
